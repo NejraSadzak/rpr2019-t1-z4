@@ -4,16 +4,23 @@ public class Supermarket {
 
     private Artikl[] artikli = new Artikl [1000];
 
-    public Supermarket() {}
+    public Supermarket() {
+        artikli=new Artikl[1000];
+    }
 
     public Artikl izbaciArtiklSaKodom (String kod) {
         Artikl zaIzbaciti = null;
-         for (int i=0; i<artikli.length; i++)
+        int i;
+         for (i=0; i<artikli.length; i++)
             if(artikli[i].getKod().equals(kod)) {
                  zaIzbaciti = new Artikl(artikli[i]);
                 artikli[i]=null;
                 return zaIzbaciti;
             }
+         for( ;i<999; i++ ) {
+             artikli[i]=artikli[i+1];
+
+         }
 
         return zaIzbaciti;
     }
