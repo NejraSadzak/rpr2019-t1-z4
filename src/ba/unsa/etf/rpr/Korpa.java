@@ -25,20 +25,18 @@ public class Korpa {
     }
 
     public Artikl izbaciArtiklSaKodom(String kod) {
-        Artikl zaIzbaciti = null;
-        int i;
-        for( i=0; i<artikli.length; i++) {
+
+        for(int i=0; i<artikli.length; i++) {
             if(artikli[i].getKod().equals(kod)) {
-                zaIzbaciti=new Artikl(artikli[i]);
-                artikli[i]=null;
+                Artikl zaIzbaciti = artikli[i];
+                artikli[i] = null;
+                for (i = 0; i < artikli.length - 1; i++) {
+                    artikli[i] = artikli[i + 1];
+                }
                 return zaIzbaciti;
             }
         }
-        for( ;i<49; i++ ) {
-            artikli[i]=artikli[i+1];
-
-        }
-        return zaIzbaciti;
+        return null;
 
     }
 
