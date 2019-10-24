@@ -48,4 +48,6 @@ public class Korpa {
                 suma+=artikli[i].getCijena();
     return suma;
     }
+
+
 }

@@ -20,4 +20,10 @@ public class Artikl {
     String getNaziv() { return naziv; }
     int getCijena() { return cijena; }
     String getKod() { return kod; }
+
+    @Override
+    public boolean equals(Object objekat) {
+        return kod.equals(((Artikl) objekat).kod);
+
+    }
 }
